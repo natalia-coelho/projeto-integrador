@@ -1,37 +1,55 @@
-﻿@model HomeModel
+﻿@model List<Usuario>
 @{
     ViewData["Title"] = "Listagem de Usuários";
 }
 
 <h1>Listagem de Usuários</h1>
 
+<form method="post" action="@Url.Action("AddUsuario", "Usuario")">
+    <input class="btn btn-primary" type="submit" value="Adicionar" />
+</form>
+
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">E-mail</th>
             <th scope="col">Celular</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto@gmail.com</td>
             <td>11 9999-9999</td>
+            <td><i class="bi bi-pencil-square btn btn-primary"></i></td>
+            <td><i class="bi bi-person-x-fill btn btn-danger"></i></td>
         </tr>
         <tr>
-            <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton@gmail.com</td>
             <td>11 9999-9999</td>
+            <td><i class="bi bi-pencil-square btn btn-primary"></i></td>
+            <td><i class="bi bi-person-x-fill btn btn-danger"></i></td>
         </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry </td>
-            <td>Larry@gmail.com</td>
-            <td>11 9999-9999</td>
-        </tr>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Nome</td>
+                <td>@user.Email</td>
+                <td>@user.Telefone</td>
+                <td><i class="bi bi-pencil-square btn btn-primary"></i></td>
+                <td>
+                    <form method="post" action="@Url.Action("DeleteUsuario", "Usuario")">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-link">
+                            <i class="bi bi-person-x-fill btn btn-danger"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

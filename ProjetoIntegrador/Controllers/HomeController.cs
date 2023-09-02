@@ -8,11 +8,7 @@ namespace ProjetoIntegrador.Controllers
     {
         public IActionResult Index()
         {
-            HomeModel home = new HomeModel();
-            home.Nome = "Natalia";
-            home.Email = "teste email";
-
-            return View(home);
+            return View();
         }
 
         public IActionResult Privacy()

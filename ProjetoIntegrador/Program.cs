@@ -1,6 +1,9 @@
+using ProjetoIntegrador.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<IUsuarioRepository>(new FakeUsuarioRepository());
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
