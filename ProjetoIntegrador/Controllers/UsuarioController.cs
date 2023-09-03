@@ -25,6 +25,29 @@ public class UsuarioController : Controller
         return View();
     }
 
+    public IActionResult CadastroComum()
+    {
+        return View();
+    }
+    public IActionResult CadastroFornecedor()
+    {
+        return View();
+    }
+    public IActionResult CadastroConsumidor()
+    {
+        return View();
+    }
+    public IActionResult Login()
+    {
+        return View();
+    }
+
+    public IActionResult CadastroPendente()
+    {
+        return View();
+    }
+
+
     [Route("Usuario/Create")]
     [HttpPost("")]
     public IActionResult CreateUsuario(String nome, String email, String telefone)
@@ -33,9 +56,12 @@ public class UsuarioController : Controller
         this._usuarioRepository.Create(usuarioRequest);
         return RedirectToAction("Index");
     }
-    public IActionResult EditUsuario()
+    public IActionResult EditUsuario(Guid id, String nome, String email, String telefone)
     {
-        return Ok();
+        UpdateUsuarioRequest updateRequest = new(id, nome, email, telefone);
+
+        this._usuarioRepository.Update(updateRequest);
+        return RedirectToAction("Index");
     }
     public IActionResult DeleteUsuario(Guid id)
     {

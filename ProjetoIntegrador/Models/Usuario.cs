@@ -18,5 +18,14 @@
                 Telefone = request.Telefone
             };
         }
+
+        public Usuario Update(UpdateUsuarioRequest updateRequest)
+        {
+            this.Nome = updateRequest.Nome;
+            this.Email = updateRequest.Email;
+            this.Telefone = updateRequest.Telefone;
+
+            return this;
+        }
     }
 }

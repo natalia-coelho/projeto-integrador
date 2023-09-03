@@ -1,0 +1,28 @@
+﻿<body>
+    <div class="container-sm">
+        <h2>Cadastro de Consumidor</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="Nome">Nome</label>
+                <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control" id="Email" name="Email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="CPFCNPJ">CPF/CNPJ</label>
+                <input type="text" class="form-control" id="CPFCNPJ" name="CPFCNPJ" placeholder="CPF/CNPJ">
+            </div>
+            <div class="form-group">
+                <label for="Senha">Senha</label>
+                <input type="password" class="form-control" id="Senha" name="Senha" placeholder="Senha">
+            </div>
+            <div class="form-group">
+                <label for="ConfirmaSenha">Confirmação de Senha</label>
+                <input type="password" class="form-control" id="ConfirmaSenha" name="ConfirmaSenha" placeholder="Confirmação de Senha">
+            </div>
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Index">Cadastrar</a>
+        </form>
+    </div>
+</body>

@@ -51,9 +51,16 @@ namespace ProjetoIntegrador.Repository
             return usuario;
         }
 
-        public Usuario Update(UpdateUsuarioRequest usuarioRequest)
+        public Usuario Update(UpdateUsuarioRequest updateRequest)
         {
-            throw new NotImplementedException();
+            // 1. encontrar usuário com o Id
+            // 2. substituir campos do usuário
+
+            Usuario usuario = Get(updateRequest.Id);
+
+            usuario = usuario.Update(updateRequest);
+
+            return usuario;
         }
     }
 }

@@ -13,4 +13,12 @@
     <None Remove="Views\NewFolder\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Views\Usuario\CadastroFornecedorPendente.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Usuario\CadastroFornecedorPendente.cshtml" />
+  </ItemGroup>
+
 </Project>

@@ -40,7 +40,14 @@
                 <td>@user.Nome</td>
                 <td>@user.Email</td>
                 <td>@user.Telefone</td>
-                <td><i class="bi bi-pencil-square btn btn-primary"></i></td>
+                <td>
+                    <form method="post" action="@Url.Action("UpdateUsuario", "Usuario")">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-link">
+                            <i class="bi bi-pencil-square btn btn-primary"></i>
+                        </button>
+                    </form>
+                </td>
                 <td>
                     <form method="post" action="@Url.Action("DeleteUsuario", "Usuario")">
                         <input type="hidden" name="id" value="@user.Id" />
